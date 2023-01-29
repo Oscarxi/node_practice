@@ -29,6 +29,7 @@ export function removeNote(title) {
     } else {
         const notes = loadNotes();
         const otherNotes = notes.filter((note) => note.title !== title);
+
         if (otherNotes.length < notes.length) {
             saveNotes(otherNotes);
             console.log(chalk.bgGreen('Note removed!'));
@@ -42,9 +43,8 @@ export function removeNote(title) {
 export function listNotes() {
     const notes = loadNotes();
 
-    debugger;
-
     console.log(chalk.bgGray('Your notes:'));
+
     notes.forEach((note) => {
         console.log(note.title);
     });
