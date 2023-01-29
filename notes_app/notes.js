@@ -20,7 +20,7 @@ export function addNote(title, content) {
             console.log(chalk.bgRed('Note title taken :('));
         }
     }
-}
+};
 
 // Remove the note according to the title
 export function removeNote(title) {
@@ -37,7 +37,7 @@ export function removeNote(title) {
             console.log(chalk.bgRed('Note not found :('));
         }
     }
-}
+};
 
 // List all notes
 export function listNotes() {
@@ -48,7 +48,7 @@ export function listNotes() {
     notes.forEach((note) => {
         console.log(note.title);
     });
-}
+};
 
 // Read the note according to the title
 export function readNote(title) {
@@ -65,7 +65,7 @@ export function readNote(title) {
             console.log(chalk.bgRed('Note not found :('));
         }
     }
-}
+};
 
 // Get notes JSON
 function loadNotes() {
@@ -76,10 +76,10 @@ function loadNotes() {
     } catch (error) {
         return [];
     }
-}
+};
 
 // Save notes JSON to file
 function saveNotes(notes) {
     const dataJSON = JSON.stringify(notes);
     fs.writeFileSync('notes.json', dataJSON);
-}
+};
